@@ -5,7 +5,7 @@ load_dotenv()
 
 class MainConfig(BaseSettings):
     #main
-    APP_NAME: str | None = "Ton"
+    APP_NAME: str | None = "On-chain Ton"
     APP_VERSION: str | None = "1.0.0"
 
 

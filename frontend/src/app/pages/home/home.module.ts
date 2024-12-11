@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-// import { HomeServices } from './services/home.service';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
+import { HomeServices } from './services/home.service';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     MatTableModule,
@@ -22,6 +22,7 @@ import {MatButtonModule} from '@angular/material/button';
     HomeRoutingModule,
     MatButtonModule
   ],
+  providers: [HomeServices],
 
 })
 export class HomeModule { }

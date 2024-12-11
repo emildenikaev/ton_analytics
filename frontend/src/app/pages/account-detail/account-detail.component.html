@@ -1,0 +1,39 @@
+<div>
+  <h2>Account Details for {{ accountAddress }}</h2>
+  
+  <h3>Summary</h3>
+  <p><strong>Total Incoming Value:</strong> {{ totalIncomingValue | number }}</p>
+  <p><strong>Total Outgoing Value:</strong> {{ totalOutgoingValue | number }}</p>
+  <p><strong>Total Fees Paid:</strong> {{ totalFees | number }}</p>
+  <p><strong>Calculated Balance:</strong> {{ calculateBalance() }}</p>
+
+  <h3>Transaction Details</h3>
+  <table mat-table [dataSource]="accountDetails.result" class="mat-elevation-z8">
+    <ng-container matColumnDef="timestamp">
+      <th mat-header-cell *matHeaderCellDef> Transaction Timestamp </th>
+      <td mat-cell *matCellDef="let transaction"> {{ convertUtimeToReadableTime(transaction.utime)  }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fee">
+      <th mat-header-cell *matHeaderCellDef> Fee </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.fee | number }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="incoming">
+      <th mat-header-cell *matHeaderCellDef> Incoming Value </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.in_msg.value | number }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="outgoing">
+      <th mat-header-cell *matHeaderCellDef> Outgoing Value </th>
+      <td mat-cell *matCellDef="let transaction"> {{ getOutgoingValue(transaction) }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['timestamp', 'fee', 'incoming', 'outgoing']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['timestamp', 'fee', 'incoming', 'outgoing']"></tr>
+  </table>
+
+  <ng-template #loading>
+    <p>Loading account details...</p>
+  </ng-template>
+</div>

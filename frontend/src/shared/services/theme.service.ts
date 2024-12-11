@@ -4,6 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ThemeService {
+  private defaultTheme: string = 'dark'; 
+
+  constructor() {
+    this.theme = this.defaultTheme;
+  }
+
   get theme(): string | null {
     return document.documentElement.getAttribute('theme');
   }

@@ -157,57 +157,44 @@ a {
     justify-content: center;
     align-items: center;
     height: 40px;
-    /* Высота кнопки */
     width: 40px;
-    /* Ширина кнопки */
 }
 
 .burger {
     position: relative;
     width: 30px;
-    /* Ширина полоски */
     height: 3px;
-    /* Толщина полоски */
     background-color: #000;
-    /* Цвет полоски по умолчанию для темной темы */
 }
 
 .burger.light {
     background-color: #000;
-    /* Цвет центральной полоски в светлой теме */
 }
 
 .burger.light::before,
 .burger.light::after {
     background-color: #000;
-    /* Цвет верхней и нижней полосок в светлой теме */
 }
 
 .burger.dark {
     background-color: #fff;
-    /* Цвет центральной полоски в темной теме */
 }
 
 .burger.dark::before,
 .burger.dark::after {
     background-color: #fff;
-    /* Цвет верхней и нижней полосок в темной теме */
 }
 
-/* Когда меню открыто */
 .burger.open {
     background-color: transparent;
-    /* Скрываем центральную полоску */
 }
 
 .burger.open::before {
     transform: translateY(8px) rotate(45deg);
-    /* Поворачиваем верхнюю полоску */
 }
 
 .burger.open::after {
     transform: translateY(-8px) rotate(-45deg);
-    /* Поворачиваем нижнюю полоску */
 }
 
 .burger::before,
@@ -216,37 +203,29 @@ a {
     left: 0px;
     position: absolute;
     width: 30px;
-    /* Ширина полоски */
     height: 3px;
-    /* Толщина полоски */
     background-color: #000;
-    /* Цвет полоски */
 }
 
 .burger::before {
     top: -8px;
-    /* Положение верхней полоски */
 }
 
 .burger::after {
     top: 8px;
-    /* Положение нижней полоски */
 }
 
 /* Когда меню открыто */
 .burger.open {
     background-color: transparent;
-    /* Скрываем центральную полоску */
 }
 
 .burger.open::before {
     transform: translateY(8px) rotate(45deg);
-    /* Поворачиваем верхнюю полоску */
 }
 
 .burger.open::after {
     transform: translateY(-8px) rotate(-45deg);
-    /* Поворачиваем нижнюю полоску */
 }
 
 html,
@@ -259,48 +238,38 @@ ng-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Заставляет контейнер занимать полную высоту окна */
 }
 
 
 
 .footer {
     text-align: center;
-    /* Можно добавить выравнивание по центру */
     padding: 10px 0;
-    /* Устанавливаем отступы для футера */
 }
 
 .layout {
     display: flex;
-    /* Используем flexbox для расположения меню и контента */
 }
 
 .side-menu {
     display: none;
     position: relative;
-    /* Меню будет занимать место, а не растягиваться */
     top: 0;
     left: 0;
     width: 250px;
-    /* Фиксированная ширина бокового меню */
     height: calc(100vh - 60px);
-    /* Высота меню */
     z-index: 5;
     transition: transform 0.3s ease;
-    /* Добавляем плавность при открытии/закрытии меню */
 }
 
 .menu-open {
     display: block;
     transform: translateX(0);
-    /* Когда меню открыто, показываем его */
 }
 
 .content {
     min-height: calc(100vh - 60px);
     flex: 1;
-    /* Занимает оставшееся пространство */
 
     &-light {
         background-color: #E1E5EA;
@@ -314,7 +283,6 @@ ng-container {
 
 .mat-list-item {
     overflow: visible;
-    /* Разрешить содержимому перекрывать границы элемента */
 }
 
 .list-icon {
@@ -337,40 +305,33 @@ ng-container {
 .list-item {
     display: flex;
     align-items: center;
-    /* Выравнивание по центру по вертикали */
 }
 
 .mat-list-item {
     padding: 0;
-    /* Удалите отступы у элемента списка */
 }
 
 .mat-list-item:hover {
     background: transparent;
-    /* Убедитесь, что фон не перекрывает стиль при наведении */
 }
 
 ::ng-deep {
     .mdc-list-item__content::before {
         content: '';
-        /* Или установите это в 'none', чтобы убрать его */
     }
 
     .mat-mdc-list-item-title::before {
         content: '';
-        /* Убираем контент, если он есть */
     }
 
     .mat-list-icon::before,
     .mat-list-icon::after,
     .mdc-list-item__content::before {
         content: none !important;
-        /* Зачеркнуть любые псевдоэлементы */
     }
 
     .mat-mdc-list-item-title::before {
         content: none !important;
-        /* Убираем контент, если он есть */
     }
 
     .mat-mdc-list {
@@ -378,3 +339,4 @@ ng-container {
         align-items: center;
     }
 }
+

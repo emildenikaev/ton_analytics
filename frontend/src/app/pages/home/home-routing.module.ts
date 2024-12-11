@@ -8,11 +8,6 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  {
-    path: 'upload',
-    loadChildren: () => import('../upload/upload.module').then(m => m.UploadModule)
-  },
-
 ];
 
 @NgModule({

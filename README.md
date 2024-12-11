@@ -1,66 +1,71 @@
-# Ончейн Анализ: Сканнер Китов в TON
+# On-chain Analysis: Whale Scanner in TON
 
-Онлайн-приложение для ончейн анализа, направленное на нахождение крупных держателей криптовалюты (китов) в блокчейне TON. Приложение предлагает сканнер, который позволяет пользователям получать информацию о крупнейших кошельках в TON, эффективно анализируя их активы и поведение.
+An online application for on-chain analysis aimed at identifying large cryptocurrency holders (whales) in the TON blockchain. The application offers a scanner that allows users to obtain information about the largest wallets in TON, effectively analyzing their assets and behavior.
 
-## 📌 Основные функции
+## 📌 Key Features
 
-- **Поиск китов в TON**: Приложение позволяет находить адреса с высокими балансами, используя аналитические алгоритмы для определения крупных держателей токенов.
-- **Просмотр анкет кошельков**: Возможность просматривать информацию о кошельках, включая баланс и историю транзакций.
-- **Фильтрация и ранжирование**: Анкеты кошельков сортируются по схожести с заданными критериями, чтобы показать наиболее релевантные адреса.
+- Whale Detection in TON: The application enables the identification of addresses with high balances using analytical algorithms to determine major token holders.
+- Wallet Profiles: The ability to view information about wallets, including balance and transaction history.
+- Filtering and Ranking: Wallet profiles are sorted by similarity to specified criteria to showcase the most relevant addresses.
   
-## ⚙️ Технические требования
+## ⚙️ Technical Requirements
 
-- **Frontend**: Angular для создания удобного пользовательского интерфейса.
-- **Backend**: FastAPI для обработки запросов и всей логики приложения.
-- **Аналитика**: Использование Python вместе с библиотеками для анализа данных.
+- Frontend: Angular for creating a user-friendly interface.
+- Backend: FastAPI for handling requests and all application logic.
+- Analytics: Using Python along with libraries for data analysis.
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-1. **Клонируйте репозиторий**:
+1. Clone the repository:
    
-bash
-   git clone https://github.com/вашрепозиторий.git
-   cd вашрепозиторий
    
-2. **Установите зависимости**:
-   - Для фронтенда:
+   git clone https://github.com/yourrepository.git
+   cd yourrepository
+   
+   
+2. Install dependencies:
+   - For the frontend:
      
-bash
-     cd front-end
-     npm install
+   
+   cd front-end
+   npm install
+   
      
-   - Для бэкенда:
+   - For the backend:
      
-bash
-     cd back-end
-     pip install -r requirements.txt
+   
+   cd back-end
+   pip install -r requirements.txt
+   
      
-3. **Настройте переменные окружения**: Убедитесь, что у вас правильно настроены переменные окружения для подключения к FastAPI.
+3. Configure environment variables: Ensure that your environment variables are correctly set up to connect to FastAPI.
 
-4. **Запустите приложение**:
-   - Для фронтенда:
+4. Run the application:
+   - For the frontend:
      
-bash
-     ng serve
+   
+   ng serve
+   
      
-   - Для бэкенда:
+   - For the backend:
      
-bash
-     uvicorn main:app --reload
+   
+   uvicorn main:app --reload
+   
      
-5. **Откройте приложение в браузере**: Перейдите на адрес `http://localhost:4200` для доступа к пользовательскому интерфейсу.
+5. Open the application in the browser: Navigate to http://localhost:4200 to access the user interface.
 
-## 🛠 Процесс разработки
+## 🛠 Development Process
 
-1. **Исследование TON**: Изучите особенности блокчейна TON, чтобы понять, как эффективно собирать и анализировать данные.
-2. **Использование библиотек**: Используйте библиотеки для работы с TON, чтобы получать информацию о кошельках и их балансах.
-3. **Разработка аналитических моделей**: Применяйте методы анализа данных, включая бэктестинг, для проверки гипотез и анализа активов.
-4. **Интеграция вторичных решений**: Интегрируйте все решения в единое приложение для обеспечения удобства и масштабируемости.
+1. Research TON: Explore the features of the TON blockchain to effectively gather and analyze data.
+2. Library Utilization: Use libraries to interact with TON to retrieve information about wallets and their balances.
+3. Development of Analytical Models: Apply data analysis methods, including backtesting, to test hypotheses and analyze assets.
+4. Integration of Secondary Solutions: Integrate all solutions into a single application to ensure usability and scalability.
 
-## 📄 Лицензия
+## 📄 License
 
-Этот проект лицензирован на условиях MIT License.
+This project is licensed under the MIT License.
 
-## 🤝 Вклад
+## 🤝 Contributions
 
-Если у вас есть опыт работы с TON или хотите внести свой вклад в проект, пожалуйста, дайте знать! Мы будем рады вашему участию.
+If you have experience working with TON or would like to contribute to the project, please reach out! We would appreciate your participation.
