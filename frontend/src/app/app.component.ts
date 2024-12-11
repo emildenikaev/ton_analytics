@@ -5,19 +5,28 @@ import { ThemeService } from '../shared/services/theme.service';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeModule } from './pages/home/home.module';
-import { BrowserModule } from '@angular/platform-browser';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator'; // For pagination (optional)
+import { MatSortModule } from '@angular/material/sort'; // For sorting (optional)
+import { AccountDetailModule } from './pages/account-detail/account-detail.module';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HomeModule, 
+  imports: [CommonModule,    
+    FormsModule, ReactiveFormsModule, HomeModule, 
+    AccountDetailModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     RouterOutlet, RouterOutlet, RouterModule, MatListModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  enabled = false; // Статус текущей темы
-  menuOpen = false; // Статус открытия меню
+  enabled = false; 
+  menuOpen = false;
 
   constructor(private _themeService: ThemeService) {
     this.enabled = this._themeService.theme === 'dark';
@@ -25,7 +34,7 @@ export class AppComponent {
 
 
   list = [
-    { name: 'Файлы', isActive: false, url: '/upload', png: 'downloading' },
+    { name: 'Upload', isActive: false, url: '/upload', png: 'downloading' },
   ];
 
   changeTheme() {
