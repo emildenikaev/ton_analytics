@@ -1,0 +1,38 @@
+<ng-container>
+  <header class="header">
+    <div class="header-item">
+      <button (click)="toggleMenu()" class="btn menu-toggle">
+        <div class="burger" [ngClass]="{'open': menuOpen, 'light': !enabled, 'dark': enabled}"></div>
+      </button>
+      <a href="" class="logo" [ngClass]="enabled ? 'link-light' : 'link-dark'">Ton</a>
+    </div>
+
+    <input type="text" placeholder="Поиск..." class="search-bar"
+      [ngClass]="enabled ? 'search-light' : 'search-dark'" />
+    <button (click)="changeTheme()" class="btn theme-toggle"
+      [ngClass]="enabled ? 'btn-light-theme' : 'btn-dark-theme'">
+      <img [src]="enabled ? './assets/img/light.svg' : './assets/img/dark.svg'" alt="Switch Theme"
+        class="theme-icon" />
+    </button>
+  </header>
+
+  <div class="layout">
+    <nav [ngClass]="{'menu-open': menuOpen, 'light': !enabled, 'dark': enabled}" class="side-menu">
+      <div class="list-container">
+      <mat-list *ngFor="let link of list">
+        <img class="list-icon" [src]="'../assets/img/menu/' + link.png + '.png'" alt="">
+        <mat-list-item role="listitem">
+            <a matListItemTitle [class.active]="link.isActive" [routerLink]="link.url" class="text">
+               {{ link.name }}
+            </a>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    </nav>
+
+    <section [ngClass]="{'content': true, 'content-light': !enabled, 'content-dark': enabled, 'content-extended': !menuOpen}">
+      <router-outlet>
+      </router-outlet>
+    </section>
+  </div>
+</ng-container>
